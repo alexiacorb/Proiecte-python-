@@ -19,20 +19,19 @@ def song():
         ("I'd love you for a thousand more")
     ]
     
-    delays= [3,0.3,0.3,0.2,0.6,0.1,0.1,0.1,0.6,0.6,0.6]
+    delays= [3,4,3,7,4,8,6,3,3,5,6]
     
     pygame.mixer.init()
     
     pygame.mixer.music.load('d:\\Utilizator Windows10\\Desktop\\playmusic\\James Arthur - A Thousand Years (Lyrics).mp3')
 
-    pygame.mixer.music.play(start=6)
+    pygame.mixer.music.play(start=5)
     
     for lyric,delay in zip(lyrics,delays):
         for char in lyric:
             print(char,end='')
             sys.stdout.flush()
-            sleep(0.01)
+            sleep(0.05)
         print('')
         sleep(delay)
-
 song()
