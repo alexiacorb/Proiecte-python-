@@ -1,0 +1,38 @@
+from time import sleep 
+import time 
+import sys 
+import pygame
+
+
+def song():
+    lyrics =[
+        ("Heart beats fast"),
+        ("Colours and promises"),
+        ("How to be brave?"),
+        ("How can I love when I'm afraid to fall?"),
+        ("Watching you stand alone"),
+        ("All of my doubt suddenly goes away somehow"),
+        ("One step closer"),
+        ("I have died every night waiting for you"),
+        ("Darling, don't be afraid"),
+        ("I have loved you for a thousand years"),
+        ("I'd love you for a thousand more")
+    ]
+    
+    delays= [3,0.3,0.3,0.2,0.6,0.1,0.1,0.1,0.6,0.6,0.6]
+    
+    pygame.mixer.init()
+    
+    pygame.mixer.music.load('d:\\Utilizator Windows10\\Desktop\\playmusic\\James Arthur - A Thousand Years (Lyrics).mp3')
+
+    pygame.mixer.music.play(start=6)
+    
+    for lyric,delay in zip(lyrics,delays):
+        for char in lyric:
+            print(char,end='')
+            sys.stdout.flush()
+            sleep(0.01)
+        print('')
+        sleep(delay)
+
+song()
